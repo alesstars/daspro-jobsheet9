@@ -17,35 +17,40 @@ public class Tugas201 {
         System.out.println("========================================");
 
         for (int i = 0; i < jmlPesanan; i++) {
-            System.out.print("Masukkan nama menu ke-" + (i + 1) + " yang ingin dipesan: ");
-            String pilihan = sc.nextLine();
-            
-            boolean ditemukan = false;
+            boolean found;
 
-            for (int j = 0; j < menu.length; j++) {
-                if (menu[j].equalsIgnoreCase(pilihan)) {
-                    ditemukan = true;
-                    menuDipesan[i] = menu[j];
-                    totalHarga += harga[j];
-                    System.out.println("-> Menu ditemukan! Harga: Rp. " + harga[j]);
-                    break;
+            do {
+                found = false;
+                
+                System.out.print("Masukkan nama menu ke-" + (i + 1) + " yang ingin dipesan: ");
+                String pilihan = sc.nextLine();
+                
+                for (int j = 0; j < menu.length; j++) {
+                    if (menu[j].equalsIgnoreCase(pilihan)) {
+                        found = true;
+                        menuDipesan[i] = menu[j];
+                        totalHarga += harga[j];
+                        System.out.println("Harga: Rp. " + harga[j]);
+                        break;
+                    }
                 }
-            }
+                
+                if (!found) {
+                    System.out.println("Mohon maaf, menu tersebut tidak tersedia di kafe. Silakan masukkan ulang.");
+                }
+                
+            } while (!found);
             
-            if (!ditemukan) {
-                System.out.println("-> Mohon maaf, menu tersebut tidak tersedia di kafe.");
-                menuDipesan[i] = pilihan + " (Tidak Tersedia)";
-            }
             System.out.println("----------------------------------------");
         }
 
         System.out.println("\n========= STRUK PEMESANAN KAFE =========");
-        System.out.println("Daftar menu yang dipesan:");
+        System.out.println("Menu yang dipesan:");
         for (int i = 0; i < menuDipesan.length; i++) {
             System.out.println("- " + menuDipesan[i]);
         }
         System.out.println("========================================");
-        System.out.println("Total keseluruhan biaya: Rp. " + totalHarga);
+        System.out.println("Total yang harus dibayar: Rp. " + totalHarga);
         System.out.println("========================================");
 
         sc.close();
