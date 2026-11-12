@@ -41,7 +41,7 @@ public class Tugas101 {
 
         for (int i = 0; i < nilaiMhs.length; i++) {
             String status = (nilaiMhs[i] >= 70) ? "LULUS" : "TIDAK LULUS";
-            System.out.println("Mahasiswa ke-" + (i + 1) + ": " + nilaiMhs[i] + " => " + status);
+            System.out.println("Mahasiswa ke-" + (i + 1) + ": " + nilaiMhs[i] + " (" + status + ")");
         }
 
         sc.close();
