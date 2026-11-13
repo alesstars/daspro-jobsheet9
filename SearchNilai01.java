@@ -5,21 +5,30 @@ public class SearchNilai01 {
         
         Scanner sc = new Scanner(System.in);
 
-        int nilai[] = {78, 65, 90, 55, 88, 72}, key = 100;
-        boolean ditemukan = false;
+        int nilai[] = {78, 65, 90, 55, 88, 72};
+        int key;
+        boolean found; 
 
-        for (int i = 0; i < nilai.length; i++) {
-            if (nilai[i] == key) {
-                System.out.println("Nilai " + key + " ditemukan pada indeks ke-" + i);
-                ditemukan = true;
-                break;
+        do {
+            found = false; 
+
+            System.out.print("Masukkan nilai yang dicari: ");
+            key = sc.nextInt();
+
+            for (int i = 0; i < nilai.length; i++) {
+                if (nilai[i] == key) {
+                    System.out.println("Nilai " + key + " ditemukan pada indeks ke-" + i);
+                    found = true;
+                    break;
+                }
             }
-        }
 
-        if (!ditemukan) {
-            System.out.println("Nilai " + key + " tidak ditemukan.");
-        }
+            if (!found) {
+                System.out.println("Nilai " + key + " tidak ditemukan dalam array. Silakan coba lagi!\n");
+            }
+
+        } while (!found);
 
         sc.close();
-    }
+    } 
 }
