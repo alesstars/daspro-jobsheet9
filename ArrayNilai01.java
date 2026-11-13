@@ -21,6 +21,19 @@ public class ArrayNilai01 {
             nomor++;
         }
 
+        int jmlLulus = 0, jmlTidakLulus = 0;
+
+        for (int nilai : nilaiAkhir) {
+            if (nilai > 70) {
+                jmlLulus++;
+            } else {
+                jmlTidakLulus++;
+            }
+        }
+
+        System.out.println("Jumlah mahasiswa yang lulus: " + jmlLulus);
+        System.out.println("Jumlah mahasiswa yang tidak lulus: " + jmlTidakLulus);
+
         sc.close();
     }
 }
