@@ -6,8 +6,6 @@ public class ArrayNilai01 {
         Scanner sc = new Scanner(System.in);
 
         int nilaiAkhir[] = new int[10];
-
-        // Loop pertama tetap memakai for biasa karena untuk input data
         for (int i = 0; i < nilaiAkhir.length; i++) {
             System.out.print("Masukkan nilai mahasiswa ke-" + (i + 1) + " : ");
             nilaiAkhir[i] = sc.nextInt();
