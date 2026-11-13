@@ -32,6 +32,14 @@ public class ArrayRataNilai01 {
         System.out.println("Nilai tertinggi: " + tertinggi);
         System.out.println("Nilai terendah: " + terendah);
         
+        int jmlLulus = 0;
+        for (int i = 0; i < nilaiMhs.length; i++) {
+            if (nilaiMhs[i] > 70) {
+                jmlLulus++;
+            }
+        }
+        System.out.println("Jumlah mahasiswa yang lulus: " + jmlLulus);
+
         String status = "";
 
         for (int i = 0; i < nilaiMhs.length; i++) {
