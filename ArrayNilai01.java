@@ -7,14 +7,20 @@ public class ArrayNilai01 {
 
         int nilaiAkhir[] = new int[10];
 
+        // Loop pertama tetap memakai for biasa karena untuk input data
         for (int i = 0; i < nilaiAkhir.length; i++) {
             System.out.print("Masukkan nilai mahasiswa ke-" + (i + 1) + " : ");
             nilaiAkhir[i] = sc.nextInt();
         }
 
-        for (int i = 0; i < nilaiAkhir.length; i++) {
-            String status = (nilaiAkhir[i] > 70) ? "LULUS" : "TIDAK LULUS";
-            System.out.println("Mahasiswa ke-" + (i + 1) + " : " + nilaiAkhir[i] + " (" + status + ")");
+        int nomor = 1;
+        for (int nilai : nilaiAkhir) {
+            String status = (nilai > 70) ? "LULUS" : "TIDAK LULUS";
+
+            if (nilai > 70) {
+                System.out.println("Mahasiswa ke-" + nomor + " : " + nilai + " (" + status + ")");
+            }
+            nomor++;
         }
 
         sc.close();
